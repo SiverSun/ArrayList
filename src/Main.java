@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.function.Consumer;
 
 public class Main {
     public static <products> void main(String[] args) throws Exception {
@@ -23,28 +22,10 @@ public class Main {
                         }
                         break;
                     case 2:
-                        //System.out.println("Список покупок:");
-                        //for (int i = 0; i < products.size(); i++) {
-                            //System.out.println((i + 1) + " " + products.get(i));
-                       // }
-                        products.forEach(new Consumer<String>() {
-                            @Override
-                            public void accept(String s) {
-                                System.out.println(s);
-                            }
-                        });
+                     printProducts(products);
                         break;
                     case 3:
-                        //System.out.println("Список покупок:");
-                        //for (int i = 0; i < products.size(); i++) {
-                         //   System.out.println((i + 1) + " " + products.get(i));
-                      // }
-                        products.forEach(new Consumer<String>() {
-                            @Override
-                            public void accept(String s) {
-                                System.out.println(s);
-                            }
-                        });
+                        printProducts(products);
                         System.out.println("Какую хотите удалить? Введите номер или название");
                         String inputMove3 = scanner.nextLine();
                         try {
@@ -74,13 +55,14 @@ public class Main {
             }
 
         }
-       // private static void printProducts() {
-       //System.out.println("Список покупок:");
-       // for (int i = 0; i < products.size(); i++) {
-        //System.out.println((i + 1) + " " + products.get(i));
-     //     }
-      //   }
+
 
     }
 
-}
+    public static void printProducts(List<String> products) {
+        System.out.println("Список покупок:");
+        for (int i = 0; i < products.size(); i++) {
+            System.out.println((i + 1) + " " + products.get(i));
+        }
+    }
+          }
