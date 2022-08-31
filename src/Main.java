@@ -17,12 +17,10 @@ public class Main {
                         System.out.println("Какую покупку вы хотите добавить?");
                         String inputMove = scanner.nextLine();
                         products.add(inputMove);
-                        for (int i = 0; i < products.size(); i++) {
-                            System.out.println("Итого в списке покупок: " + products.get(i));
-                        }
+                        printProducts(products);
                         break;
                     case 2:
-                     printProducts(products);
+                        printProducts(products);
                         break;
                     case 3:
                         printProducts(products);
@@ -31,17 +29,13 @@ public class Main {
                         try {
                             int productNumber = Integer.parseInt(inputMove3) - 1;
                             products.remove(productNumber);
-                            System.out.println("Покупка " + (productNumber + 1) + " удалена, список покупок: ");
-                            for (int i = 0; i < products.size(); i++) {
-                                System.out.println((i + 1) + " " + products.get(i));
-                            }
+                            System.out.println("Покупка " + (productNumber + 1) + " удалена");
+                            printProducts(products);
 
                         } catch (NumberFormatException e) {
                             products.remove(inputMove3);
-                            System.out.println("Покупка " + inputMove3 + " удалена, список покупок: ");
-                            for (int i = 0; i < products.size(); i++) {
-                                System.out.println((i + 1) + " " + products.get(i));
-                            }
+                            System.out.println("Покупка " + inputMove3 + " удалена");
+                            printProducts(products);
                         }
                         break;
 
@@ -65,4 +59,4 @@ public class Main {
             System.out.println((i + 1) + " " + products.get(i));
         }
     }
-          }
+}
